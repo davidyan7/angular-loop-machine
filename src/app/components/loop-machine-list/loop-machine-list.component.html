@@ -1,0 +1,5 @@
+<div class="list-container">
+    <ul  *ngFor="let sound of sounds" class="{{sound.id}} ">
+        <app-loop-machine-preview  [sound]="sound"></app-loop-machine-preview>
+    </ul>
+</div>

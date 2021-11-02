@@ -1,0 +1,71 @@
+.sound-preview-container {
+    border: none;
+    width: 100px;
+    height: 100px;
+    transform: rotate(45deg);
+    
+
+    .sound-preview {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: rgba(97, 190, 240, 0.392);
+        border-bottom: 5px solid #959595;
+        border-right: 5px solid #959595;
+        border-radius: 10px;
+    }
+
+    .sound-preview:hover{
+        background-color: #cdcdcd
+    }
+
+    h1 {
+        transform: rotate(-45deg);
+    }
+    .grey {
+        color: rgb(242, 249, 110);
+    }
+
+    .one {
+        background-color: rgb(70, 70, 70);
+    }
+    .two {
+        background-color: rgb(57, 64, 108);
+    }
+    .three {
+        background-color: rgb(57, 64, 108);
+    }
+    .four {
+        background-color: rgb(113, 46, 46);
+    }
+    .five {
+        background-color: rgb(57, 64, 108);
+    }
+    .six {
+        background-color: rgb(113, 46, 46);
+    }
+    .seven {
+        background-color: rgb(70, 70, 70);
+    }
+    .eight {
+        background-color: rgb(70, 70, 70);
+    }
+    .nine {
+        background-color: rgb(70, 70, 70);
+    }
+
+
+    @media (max-width: 550px) {
+         
+        border: none;
+    width: 70px;
+    height: 70px;
+    transform: rotate(45deg);
+    
+        
+    }
+}

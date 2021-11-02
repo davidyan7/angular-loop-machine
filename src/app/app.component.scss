@@ -1,0 +1,89 @@
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+  background-color: #25232b;
+  align-items: center;
+
+  @media (max-width: 550px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  img {
+    width: 500px;
+    height: 90px;
+    margin-left: 50px;
+
+    @media (max-width: 550px) {
+      margin-left: 10px;
+      width: 350px;
+      height: 60px;
+    }
+    
+  }
+  .router-btn {
+    display: flex;
+    height: 120px;
+    margin-right: 50px;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+
+    @media (max-width: 550px) {
+      height: 50px;
+      margin-right: 0;
+      justify-content: center;
+    }
+
+    button {
+      display: inline-block;
+      padding: 5px 15px;
+      margin-right: 3px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0);
+      border: none;
+      border-radius: 15px;
+    }
+
+    button:hover {
+      background-color: #cdcdcd;
+      box-shadow: 0 3px #666;
+    }
+
+    button:active {
+      background-color: rgb(113, 46, 46);
+      box-shadow: 0 5px #666;
+      transform: translateY(2px);
+    }
+    a:link {
+      color: white;
+      text-decoration: none;
+    }
+    a:visited {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+footer {
+  color: white;
+  height: 60px;
+  background-color: #25232b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

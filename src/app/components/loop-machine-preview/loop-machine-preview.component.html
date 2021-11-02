@@ -1,0 +1,5 @@
+<section  class="sound-preview-container " >   
+    <div class="sound-preview {{sound.id}}" (click)="switchPlayType(sound)">
+        <h1 [ngClass]="{'grey':sound.isPlay }">{{sound.name}}</h1>
+    </div>
+</section>

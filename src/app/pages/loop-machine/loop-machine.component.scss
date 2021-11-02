@@ -1,0 +1,54 @@
+.loop-btn {
+    height: 70px;
+
+    @media (max-width: 550px) {
+        margin-top: 40px;
+    }
+
+    button {
+        display: inline-block;
+        padding: 5px 15px;
+        margin-right: 3px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #828282;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 3px #999;
+    }
+
+    button:hover {
+        background-color: #cdcdcd;
+    }
+
+    button:active {
+        background-color: rgb(113, 46, 46);
+        box-shadow: 0 5px #666;
+        transform: translateY(2px);
+    }
+}
+
+.loop-machine {
+    padding-left: 5%;
+    background-color: gray;
+    border-radius: 62%;
+
+    @media (max-width: 550px) {
+        padding-left: 0;
+        padding-bottom: 40px;
+    }
+}
+
+.loop-container {
+    display: flex;
+    justify-content: space-evenly;
+
+    @media (max-width: 550px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}

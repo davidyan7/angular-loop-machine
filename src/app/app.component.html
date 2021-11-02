@@ -1,0 +1,19 @@
+<section class="app-container">
+    <header>
+        <img src="../assets/images/groveo.png" alt="">
+        <div class="router-btn">
+            <button><a [routerLink]="[ '/' ]">Home</a> </button>
+            <button><a [routerLink]="[ '/loop-machine' ]">Loop Machine</a></button>
+        </div>
+    </header>
+    <div>
+
+        <section class="main-container">
+            <router-outlet></router-outlet>
+        </section>
+        <footer>
+            Copyright Sahar Davidyan
+        </footer>
+    </div>
+</section>
+
