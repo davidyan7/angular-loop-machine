@@ -27,10 +27,9 @@ export class LoopMachineComponent implements OnInit {
 
 
   playAudio() {
-    if (this.intervalId != null) return
+    if (this.intervalId !== null || this.isRecordPlay) this.stopAudio();
     let nothingToPlay = this.sounds.every((sound) => !sound.isPlay);
     if (nothingToPlay) return;
-    this.stopAudio()
     this.loopMachinService.playSounds(this.sounds)
     this.intervalId = setInterval(() => {
       let nothingToPlay = this.sounds.every((sound) => !sound.isPlay);
@@ -43,14 +42,14 @@ export class LoopMachineComponent implements OnInit {
   }
 
   stopAudio() {
-    // if (this.intervalId === null && this.isRecordPlay) return
-    if (!this.isRecordPlay) {
+    if (this.intervalId !== null) {
       clearInterval(this.intervalId);
       this.isRecord = false
       this.intervalId = null
       this.loopMachinService.stopAudio(this.sounds)
       return
-    } else {
+    } 
+    if(this.isRecordPlay) {
       this.timeoutId.forEach(timeout => {
         clearTimeout(timeout)
       })
@@ -62,6 +61,7 @@ export class LoopMachineComponent implements OnInit {
 
 
   recordAudio() {
+    if(this.intervalId === null) return
     this.isRecord = !this.isRecord;
   }
 

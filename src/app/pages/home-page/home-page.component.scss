@@ -1,0 +1,32 @@
+.home-container{
+    button{
+        display: inline-block;
+        padding: 8px 20px;
+        margin-right: 3px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #5e5e5e;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 3px #999;
+    }
+    button:hover {
+        background-color: #cdcdcd;
+    }
+
+    button:active {
+        background-color: rgb(113, 46, 46);
+        box-shadow: 0 5px #666;
+        transform: translateY(2px);
+    }
+
+
+    a{
+        text-decoration: unset;
+        color: white;
+        padding: 8px 20px;
+    }
+}
