@@ -11,6 +11,7 @@ import { LoopMachineService } from '../../services/loop-machine.service'
 })
 export class LoopMachineComponent implements OnInit {
 
+  // use typescript interface
   sounds: sound[] = SOUNDS
   intervalId: any = null
   timeoutId: any = []
@@ -25,12 +26,15 @@ export class LoopMachineComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  // Start to play soundof the looper
+  // use function from the service 
   playAudio() {
     if (this.intervalId !== null || this.isRecordPlay) this.stopAudio();
     let nothingToPlay = this.sounds.every((sound) => !sound.isPlay);
     if (nothingToPlay) return;
     this.loopMachinService.playSounds(this.sounds)
+
+    // Save the interval id to clear it after
     this.intervalId = setInterval(() => {
       let nothingToPlay = this.sounds.every((sound) => !sound.isPlay);
       if (nothingToPlay) clearInterval(this.intervalId);
@@ -68,6 +72,8 @@ export class LoopMachineComponent implements OnInit {
   stopRecordAudio() {
     this.isRecord = !this.isRecord;
     this.recordedAudio.push(this.sounds);
+    
+    // use local stoarge to save the record
     this.loopMachinService.saveToStorage("AUDIORECORD", this.recordedAudio);
     this.storageRecord=this.recordedAudio
     this.stopAudio();
@@ -78,7 +84,7 @@ export class LoopMachineComponent implements OnInit {
     if (this.isRecordPlay) return
     this.stopAudio()
     this.isRecordPlay = true
-    this.recordedAudio = this.loopMachinService.loadFromStorage("AUDIORECORD");
+    this.recordedAudio = this.loopMachinService.loadFromStorage("AUDIORECORD")
     this.recordedAudio.forEach((sounds, idx) => {
       let currId = setTimeout(() => {
         this.loopMachinService.playSounds(sounds);

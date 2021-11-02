@@ -16,11 +16,6 @@ export class LoopMachinePreviewComponent implements OnInit {
 
   switchPlayType(sound){
     sound.isPlay = !sound.isPlay
-    // var sahar = new Audio(sound.url)
-    // console.log("LoopMachinePreviewComponent ~ sahar", sahar)
-    // sahar.play()
-    
-
   }
 
 }
