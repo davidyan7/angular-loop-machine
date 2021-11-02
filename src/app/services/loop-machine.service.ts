@@ -9,26 +9,21 @@ export class LoopMachineService {
 
 
   
-public  playSounds(sounds,playFrom) {
+public  playSounds(sounds) {
   sounds.forEach((sound) => {
     sound.audio = new Audio(sound.url);
     if (sound.isPlay ) {
-      console.log("LoopMachineService ~ sound.audio", sound.audio)
       sound.audio.pause();
       sound.audio.currentTime = 0;
       sound.audio.play();
-      console.log('play ',playFrom);
-      
     }
   });
 }
 
 stopAudio(sounds) {
-  // this.isRecordPlay = false;
   sounds.forEach((sound) => {
     if (sound.isPlay ) {
       if(sound.audio=={}) return
-      console.log("LoopMachineService ~ sound.audio", sound.audio)
       sound.isPlay = false;
       sound.audio.pause();
       sound.audio.currentTime = 0;
@@ -37,7 +32,6 @@ stopAudio(sounds) {
 }
 
 stopRecordAudio(sounds) {
-  // this.isRecordPlay = false;
   let recordAudio = this.loadFromStorage("AUDIORECORD");
   this.saveToStorage("AUDIORECORD",[])
   sounds.forEach((sound) => {

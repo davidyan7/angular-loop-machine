@@ -1,8 +1,10 @@
 .sound-preview-container {
     border: none;
-    width: 100px;
-    height: 100px;
-    transform: rotate(45deg);
+    width: 105px;
+    height: 105px;
+
+  
+    
     
 
     .sound-preview {
@@ -22,9 +24,19 @@
     .sound-preview:hover{
         background-color: #cdcdcd
     }
+    .sound-preview:active{
+        background-color: #cdcdcd
+    }
 
     h1 {
         transform: rotate(-45deg);
+
+
+        @media (max-width: 550px) {
+            font-size: small;
+        }
+    
+        
     }
     .grey {
         color: rgb(242, 249, 110);
@@ -34,22 +46,23 @@
         background-color: rgb(70, 70, 70);
     }
     .two {
-        background-color: rgb(57, 64, 108);
+        background-color: #4b5382;
     }
     .three {
-        background-color: rgb(57, 64, 108);
+        background-color: #9e3232;
     }
     .four {
-        background-color: rgb(113, 46, 46);
+        background-color: #4b5382;
     }
     .five {
-        background-color: rgb(57, 64, 108);
+        background-color: #4b5382;
+        
     }
     .six {
-        background-color: rgb(113, 46, 46);
+        background-color: rgb(70, 70, 70);
     }
     .seven {
-        background-color: rgb(70, 70, 70);
+        background-color: #9e3232;
     }
     .eight {
         background-color: rgb(70, 70, 70);
@@ -64,7 +77,6 @@
         border: none;
     width: 70px;
     height: 70px;
-    transform: rotate(45deg);
     
         
     }

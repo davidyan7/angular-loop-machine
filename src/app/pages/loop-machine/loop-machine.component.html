@@ -3,9 +3,9 @@
     <button (click)="stopAudio()">Stop</button>
     <button *ngIf="!isRecord" (click)="recordAudio()">Record</button>
     <button *ngIf="isRecord" (click)="stopRecordAudio()">Stop Record</button>
-    <button (click)="playRecord()">Play Record</button>
+    <button *ngIf="storageRecord !== null" (click)="playRecord()">Play Record</button>
 </div>
 <div class="loop-container">
 <app-loop-machine-list class="loop-machine" [sounds]="sounds"></app-loop-machine-list>
-<img src="../../../assets/images/discman.png" alt="">
+<img src="assets/images/discman.png" alt="">
 </div>
