@@ -6,6 +6,6 @@
     <button *ngIf="storageRecord !== null" (click)="playRecord()">Play Record</button>
 </div>
 <div class="loop-container">
-<app-loop-machine-list class="loop-machine" [sounds]="sounds"></app-loop-machine-list>
+<app-loop-machine-list class="loop-machine" [sounds]="sounds" (soundIsPlay)="switchPlayType($event)"></app-loop-machine-list>
 <img src="assets/images/discman.png" alt="">
 </div>

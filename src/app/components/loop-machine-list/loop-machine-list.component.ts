@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { sound } from 'src/app/sound';
 
 @Component({
@@ -9,10 +9,17 @@ import { sound } from 'src/app/sound';
 export class LoopMachineListComponent implements OnInit {
 
  @Input() sounds:sound[]
+ @Output() soundIsPlay = new EventEmitter()
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  switchPlayType(sound:any):void{
+    this.soundIsPlay.emit(sound)
+    
+
+  }
 }

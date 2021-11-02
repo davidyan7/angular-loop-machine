@@ -95,4 +95,20 @@ export class LoopMachineComponent implements OnInit {
     });
   }
 
+  switchPlayType(sound:any){
+  if(this.intervalId !== null) {
+    sound.audio.pause()
+    let nothingToPlay = this.sounds.every((sound) => !sound.isPlay);
+    if (nothingToPlay) {
+      clearInterval(this.intervalId)
+      this.intervalId = null
+    }
+    if (this.isRecord) {
+      this.recordedAudio.push(this.sounds);
+    }
+
+  }
+    
+  }
+
 }

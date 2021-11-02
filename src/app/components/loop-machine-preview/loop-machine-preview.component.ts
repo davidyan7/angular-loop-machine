@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { sound } from 'src/app/sound';
 
 @Component({
@@ -8,6 +8,7 @@ import { sound } from 'src/app/sound';
 })
 export class LoopMachinePreviewComponent implements OnInit {
   @Input() sound:sound
+  @Output() soundIsPlay = new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
@@ -16,6 +17,9 @@ export class LoopMachinePreviewComponent implements OnInit {
 
   switchPlayType(sound){
     sound.isPlay = !sound.isPlay
+    if (!sound.isPlay) {
+    this.soundIsPlay.emit(sound)
+    }
   }
 
 }
