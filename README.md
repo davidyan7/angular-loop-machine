@@ -1,11 +1,18 @@
 ## Loop machine app
 
 ## Description
-A loop machine that gives the user option to play 9 different audio with the combination that he wants. the user can turn on and off the audio he wants to play by clicking on the pad of the audio, all the audio that turn on start playing together in the same time when the user clicks on the play button if the user turn on another audio when the other audios already running, the new one turns on at the next loop but if he turns off one of the ones who already on he will pause immediately. all of the user choice saved at the local storage. the player can save the audio combination that he like by clicking on the save button and load them by clicking on the load button.
+The Grooveo loop machine allows users to create a simple musical piece with ease.  To create their piece, users can choose from nine different audio fragments and combine them to their liking. Choosing to play a fragment, or to stop playing one, can be done by clicking the audio fragment’s button, which toggles between the on and off options. As easy as it gets! 
+Once audio fragments are selected, pressing on the “Play” button will play all selected audio fragment simultaneously in a loop. Users can modify their selection while the piece is being played. Selection of additional, previously not selected, audio fragment while the Grooveo loop machine is working will add the new audio fragment to the next loop. However, omitting an audio fragment that is currently playing will immediately stop it from playing. 
+All the choices that are made by the user are stored in the local storage. Once users choose their desired combination of audio fragments, they can save their musical piece by clicking on the “Record” button. A new “Stop Record” button will then appear and can be used to stop the recording. To play the recorded piece, users can click on the “Play Record” button.
 
 ### Features
-* load the audio combination that the user saved
-* save the user audio combination
 * play audio
-* pause audio
+* stop audio
 * turn on and off while the loop running
+* save the user audio combination
+* load the audio combination that the user saved
+
+### Tech
+* AngularJS 
+* Github 
+* Github Pages 
