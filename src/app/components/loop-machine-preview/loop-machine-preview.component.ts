@@ -15,7 +15,7 @@ export class LoopMachinePreviewComponent implements OnInit {
   }
 
 
-  switchPlayType(sound){
+  switchPlayType(sound:any){
     sound.isPlay = !sound.isPlay
     if (!sound.isPlay) {
     this.soundIsPlay.emit(sound)

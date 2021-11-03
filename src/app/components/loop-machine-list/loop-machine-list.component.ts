@@ -19,7 +19,5 @@ export class LoopMachineListComponent implements OnInit {
 
   switchPlayType(sound:any):void{
     this.soundIsPlay.emit(sound)
-    
-
   }
 }

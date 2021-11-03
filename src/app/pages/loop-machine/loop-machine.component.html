@@ -1,9 +1,10 @@
 <div class="loop-btn">
-    <button (click)="playAudio()">Play</button>
-    <button (click)="stopAudio()">Stop</button>
+    <button *ngIf="this.intervalId === null" (click)="playAudio()">Play</button>
+    <button *ngIf="this.intervalId !== null"(click)="stopAudio()">Stop</button>
     <button *ngIf="!isRecord" (click)="recordAudio()">Record</button>
     <button *ngIf="isRecord" (click)="stopRecordAudio()">Stop Record</button>
-    <button *ngIf="storageRecord !== null" (click)="playRecord()">Play Record</button>
+    <button *ngIf="storageRecord !== null && !isRecordPlay" (click)="playRecord()">Play Record</button>
+    <button *ngIf="isRecordPlay"(click)="stopAudio()">Stop Record Playing</button>
 </div>
 <div class="loop-container">
 <app-loop-machine-list class="loop-machine" [sounds]="sounds" (soundIsPlay)="switchPlayType($event)"></app-loop-machine-list>

@@ -11,7 +11,7 @@ export class LoopMachineService {
   // Reusable function that play the looper and records sound
   public playSounds(sounds) {
     sounds.forEach((sound) => {
-      sound.audio = new Audio(sound.url);
+        sound.audio = new Audio(sound.url);
       if (sound.isPlay) {
         sound.audio.pause();
         

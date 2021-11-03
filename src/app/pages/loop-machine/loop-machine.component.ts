@@ -31,6 +31,7 @@ export class LoopMachineComponent implements OnInit {
     if (this.intervalId !== null || this.isRecordPlay) this.stopAudio();
     let nothingToPlay = this.sounds.every((sound) => !sound.isPlay);
     if (nothingToPlay) return;
+    this.recordedAudio =[]
     this.loopMachinService.playSounds(this.sounds)
 
     // Save the interval id to clear it after
@@ -38,7 +39,7 @@ export class LoopMachineComponent implements OnInit {
       let nothingToPlay = this.sounds.every((sound) => !sound.isPlay);
       if (nothingToPlay) clearInterval(this.intervalId);
       if (this.isRecord) {
-        this.recordedAudio.push(this.sounds);
+        this.recordedAudio.push(this.sounds.filter(sound=>sound.isPlay));
       }
       this.loopMachinService.playSounds(this.sounds)
     }, 8000);
@@ -70,7 +71,7 @@ export class LoopMachineComponent implements OnInit {
 
   stopRecordAudio() {
     this.isRecord = !this.isRecord;
-    this.recordedAudio.push(this.sounds);
+    this.recordedAudio.push(this.sounds.filter(sound=>sound.isPlay));
     
     // Use local stoarge to save the record
     this.loopMachinService.saveToStorage("AUDIORECORD", this.recordedAudio);
@@ -94,7 +95,7 @@ export class LoopMachineComponent implements OnInit {
       this.timeoutId.push(currId)
     });
   }
-
+// Use EventEmitter to stop audio immediately
   switchPlayType(sound:any){
   if(this.intervalId !== null) {
     sound.audio.pause()
@@ -102,9 +103,7 @@ export class LoopMachineComponent implements OnInit {
     if (nothingToPlay) {
       clearInterval(this.intervalId)
       this.intervalId = null
-    }
-    if (this.isRecord) {
-      this.recordedAudio.push(this.sounds);
+      if(this.isRecord) this.stopRecordAudio()
     }
 
   }
