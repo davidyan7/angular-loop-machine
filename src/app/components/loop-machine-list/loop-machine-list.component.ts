@@ -16,7 +16,6 @@ export class LoopMachineListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   switchPlayType(sound:any):void{
     this.soundIsPlay.emit(sound)
   }

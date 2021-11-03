@@ -7,19 +7,17 @@ import { sound } from 'src/app/sound';
   styleUrls: ['./loop-machine-preview.component.scss']
 })
 export class LoopMachinePreviewComponent implements OnInit {
-  @Input() sound:sound
+  @Input() sound: sound
   @Output() soundIsPlay = new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
-  switchPlayType(sound:any){
+  switchPlayType(sound: any) {
     sound.isPlay = !sound.isPlay
     if (!sound.isPlay) {
-    this.soundIsPlay.emit(sound)
+      this.soundIsPlay.emit(sound)
     }
   }
-
 }

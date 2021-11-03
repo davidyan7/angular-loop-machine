@@ -1,5 +1,5 @@
 <div class="list-container">
-    <ul  *ngFor="let sound of sounds" class="{{sound.id}} ">
+    <ul  *ngFor="let sound of sounds" class="{{sound.id}} sound-btn">
         <app-loop-machine-preview [sound]="sound" (soundIsPlay)="switchPlayType($event)" ></app-loop-machine-preview>
     </ul>
 </div>

@@ -1,64 +1,21 @@
-
-.list-container{
+.list-container {
     display: grid;
     padding: 0;
-    grid-template-columns: 120px 120px 120px ;
-    grid-template-rows: 120px 120px 120px ;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
     transform: rotate(45deg);
 
     @media (max-width: 550px) {
-        grid-template-columns: 80px 80px 80px ;
-        grid-template-rows: 80px 80px 80px ;
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
 }
-}
-.button-container{
-     width: 200px;
+.button-container {
+    width: 200px;
     height: 200px;
 }
 
-.one{
-    width: 30%;
-    margin: 0 3px;
-    padding: 0;
-}
-.two{
-    width: 30%;
-    margin: 0 3px;
-    padding: 0;
-}
-.three{
-    width: 30%;
-    margin: 0 3px;
-    padding: 0;
-}
-.four{
-    width: 30%;
-    margin: 0 3px;
-    padding: 0;
-}
-.five{
-    width: 30%;
-    margin: 0 3px;
-    padding: 0;
-  
-}
-.six{
-    width: 30%;
-    margin: 0 3px;
-    padding: 0;
-}
-.seven{
-    width: 30%;
-    margin: 0 3px;
-    padding: 0;
-    
-}
-.eight{
-    width: 30%;
-    margin: 0 3px;
-    padding: 0;
-}
-.nine{
+.sound-btn {
     width: 30%;
     margin: 0 3px;
     padding: 0;
